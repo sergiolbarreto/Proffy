@@ -33,7 +33,7 @@ module.exports = async function(db, { proffyValue, classValue, classScheduleValu
      const class_id = insertedClass.lastID
      
      //Inserir dados na tabela class_schedule
-     const insertedAllClassScheduleValues = classScheduleValues.map((classScheduleValue) => { //map é uma função que agrupa os valores, formando um novo array/lista []
+     const insertedAllClassScheduleValues = classScheduleValues.map((classScheduleValue) => { 
         return db.run(`
             INSERT INTO class_schedule (
                 class_id,
