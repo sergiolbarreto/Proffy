@@ -29,21 +29,7 @@
     box-sizing: border-box;
 }
 
-  /* exemplo de box model e formas de fazer a mesma coisa  #container{
-        box model - modelo de caixa - toda caixa tem uma borda, que são seus limites, toda
-        caixa tem seu preenchimento, que e seu padding 
-        border: 1px solid red;
-        padding: 10px 40px 100px; * encima, direita, embaixo, esquerdo*
-        margin: 40px 10px /*quando voce coloca apenas um valor voce esta se referindo aos 4 cantos*/
-       /* padding-left: 40px;
-        width: 300px;
-        height: 300px;
-       /* padding-top: 10px;
-        padding-right: 40px
-        padding-bottom: 100px;
-        margin: 40px 10px; - outra forma de se fazer as medidas da box
-    }
-    */
+
     html, body{
         height:100vh;
     }
