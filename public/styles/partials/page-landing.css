@@ -1,0 +1,148 @@
+#page-landing{
+    background: var(--color-primary);
+}
+
+#page-landing{
+    color: var(--color-text-in-primary);
+}
+
+.logo-container img {
+    height: 10rem;   
+}
+
+.logo-container{
+    text-align: center; /* todos os "textos" que tiverem no pai logo-container(porem tudo eh texto) vai ficar alinhado ao centro*/
+    margin-bottom:3.2rem;
+}
+
+.logo-container h2{
+    font-weight: 500; /* altera a intensidade do texto do h2 que e sua plataforma de estudos online*/
+    font-size: 3.6rem;
+    line-height:4.6rem;
+    margin-top:0.8rem;
+}
+
+.hero-image{
+    width: 100%;
+}
+
+.buttons-container{
+    display: flex;  /* para centralizer com o justify-center vc tem que usar o display: flex, se n, n funciona*/
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.buttons-container a {
+    width:30rem;
+    height: 10.4rem;
+
+    border-radius:0.8rem; /* arredondar as bordas, pode receber até 4 valores, um pra cada borda*/
+    margin-right: 1.6rem;
+
+    font: 700 2.4rem Achivo;
+
+    display: flex;
+    align-items: center; /* por mais que ja tenha em todo o body o align-intems esse ai alinha em relação a box da imagem com o texto*/
+    justify-content: center; /*Alinha toda a caixa*/
+
+    text-decoration: none; /*Remove o sublinhado embaixo do texto*/
+
+    transition: background 0.2s;
+
+    color: var(--color-button-text);
+}
+
+.buttons-container a img {
+    width:4rem;
+    margin-right: 2.4rem;
+}
+
+.buttons-container a.study {
+    background: var(--color-primary-lighter); /* qualquer opção de background é válida, tanto faz background e background-color*/
+}
+
+.buttons-container a.study:hover { /* estado hover é quando o mouse está encima do elemento citado, e o que está dentro é o que acontece*/
+    background: var(--color-primary-light);
+
+}
+
+.buttons-container a.give-classes {
+
+    background: var(--color-secondary);
+    margin-right: 0; /* tirar a margem do segundo botão ja que não tem nada do lado dele*/
+}
+
+.buttons-container a.give-classes:hover {
+    background: var(--color-secondary-dark);
+}
+
+.total-connections{
+    font-size: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-connections img{
+    margin-left: 0.8rem;
+}
+
+@media(max-width: 1100px){
+    :root{
+        font-size: 40%; /* modificar as medidas rem*/
+    }
+
+    .hero-image{
+        height: 45rem;
+    }
+
+}
+
+@media (min-width: 1100px) { /* isso diz que a partir de uma tela de 1100px ou maior, a tela vai mudar, os elementos vão ser reposicionados*/
+  #page-landing #container {
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr; /* voce pode usar porcentagens tambem por exemplo 33% 33% 33% (que quer dizer separar em 3 elementos iguais ou ser especifico
+      tipo, 100px 300px 500px*/
+      grid-template-rows: 350px 1fr;
+      grid-template-areas: 
+      "proffy image image"
+      "button button texting";
+      column-gap: 87px;
+      row-gap: 86px;
+
+  }
+.logo-container{
+    grid-area: proffy;
+    text-align: initial; /* ele volta para o início*/
+    align-self: center;
+    margin: 0;
+
+}
+
+.logo-container img{
+    height: 127px;
+}
+
+.hero-image{
+  grid-area: image;
+  height: 350px;
+
+}
+.buttons-container{
+
+  grid-area: button;
+  justify-content: flex-start;/* ele sobrescreve o conteúdo antigo (que era center, para
+  flex-start, que é no inicio da caixa do grid*/
+  margin: 0;
+
+}
+.total-connections{
+  grid-area:texting;
+  justify-self: end; /* joga o texto no fim direito do grid ao qual ele esta inserido*/
+  font-size: 1.2rem;
+
+}
+
+}

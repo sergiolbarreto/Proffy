@@ -1,0 +1,139 @@
+<!-- isso é uma tag <html> -->
+<!--na tag <head>deverá vir todas as configurações do meu documento. -->
+<!-- Todo conteudo visível na página, deverá vir na tag <body>. -->
+<!--
+        HTML
+
+        HyperText
+            Hipertexto
+            <a> - tag que coloca links na nossa pagina, uma pagina que vai te levar para outra pagina
+
+        Markup
+            Marcação
+
+
+        Language
+            Linguagem
+         
+    -->
+       <!--<style>
+ 
+                Cascading
+                Em cascata 
+
+                StyleSheet
+                Folha de estilo
+            */
+
+        #page-landing  {
+            color: red; 
+        }
+
+    </style>
+    -->
+  
+
+
+
+<!DOCTYPE html>
+<html lang="pt_br"> <!-- lang é um atributo que vai definir a linguagem do meu html -->
+<head>
+    <meta charset="UTF-8"> <!-- definir propriedades da pagina como o charset, dizendo que o tipo de texto é o utf-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- configruar o documento para as telas-->
+    <title>Proffy | Sua plataforma de estudos online</title>
+
+
+    <link rel="stylesheet" href="/styles/main.css"> 
+    <link rel="stylesheet" href="/styles/partials/page-study.css">
+    <link rel="stylesheet" href="/styles/partials/header.css">
+    <link rel="stylesheet" href="/styles/partials/forms.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+</head>
+<body id = "page-study">
+
+    <div id= "container">
+       <header class="page-header">
+        <div class="top-bar-container">
+            <a href="/">
+                <img src="/images/images/icons/back.svg" alt="Voltar">
+            </a>
+            <img src="/images/images/logo.svg" alt="Proffy">
+        </div>
+        <div class="header-content">
+            <strong>Esses são os proffys disponíveis</strong> <!-- colocar de um jeito forte, tipo bold-->
+            <form id="search-teachers"> <!-- isso leva pro backend, no caso o que acontece quando a pessoa escolhe a opção-->
+                <div class="select-block">
+                    <label for="subject">Matéria</label> <!-- coloca do lado do subject no caso o select a palavra Matéria ou qualquer coisa que estiver entre o label-->
+                    <select name="subject" id="subject"> <!-- cria aquela barra de escolha-->
+
+                        {%for subject in subjects %}
+                        <option value="{{loop.index}}"{{"selected" if filters.subject == loop.index }}> <!-- loop index é algo do html que representa o numero (1,2,3)-->
+                            {{subject}}
+                        </option>
+
+                        {%endfor%}
+        
+                    </select>
+                </div>
+                <div class="select-block"> <!-- o comportamento é um embaixo do outro, ja que é uma classe, então não é um do lado do outro, assim seria um inline-->
+                    <label for="weekday"> Dia da semana</label> <!-- coloca do lado do subject no caso o select a palavra Matéria ou qualquer coisa que estiver entre o label-->
+                    <select name="weekday" id="weekday"> <!-- cria aquela barra de escolha-->
+                       <!-- <option value=""> Selecione uma opção</option> voce pode colocar isso para aparecer ou nao, se nao quiser, depois de value add: disabled="" hidden=""-->
+                       {%for weekday in weekdays %}
+                       <option value="{{loop.index0}}"{{"selected" if filters.weekday == loop.index0 }}> <!-- loop index é algo do html que representa o numero (1,2,3)-->
+                           {{weekday}}
+                       </option>
+
+                       {%endfor%}
+                    </select>
+                </div>
+                <div class="input-block">
+                    <label for="time"> Hora</label>
+                    <input name="time" id="time" type="time" value="{{filters.time}}"> <!--o type varia, pode ser text, number, etc-->
+                </div>
+                <button type= "submit">Filtrar</button> <!-- o submit faz com que quanfo clicado, ele envie tudo que está no form, e ai entra o backend-->
+            </form>
+        </div>
+       </header>
+       <main>
+
+        {% if proffys == "" %}
+            <p class="no-results">Nenhum professor encontrado com a sua pesquisa.</p>
+        {% else %}
+
+            {%for proffy in proffys%} <!-- para cada proffy in proffys imprima o artigo-->
+                <article class="teacher-item">
+                <header>
+                    <img 
+                        src= "{{proffy.avatar}}"
+                        alt="{{proffy.name}}">
+                    <div>
+                        <strong>{{proffy.name}}</strong>
+                        <span>{{proffy.subject}}</span>
+                    </div>
+                </header>
+
+                <p>{{proffy.bio}}</p>
+
+                <footer>
+                    <p>Preço/hora<strong> R$ {{proffy.cost}}</strong>
+                    </p>
+                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}&
+                    text=Tenho interesse na sua aula de {{proffy.subject}} {{proffy.name}}"
+                    class = "button" target="_blank">
+                        <img src="/images/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
+                    </a>
+                </footer>
+                </article>
+            {%endfor%}
+
+        {% endif %}
+
+       </main>
+    </div>
+
+
+</body>
+</html>
