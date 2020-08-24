@@ -46,7 +46,7 @@
     button,
     textarea {
         /* estilização da fonte*/
-       font-weight: 500; /* peso da fonte*/
+       font-weight: 500;  /* peso da fonte*/
        font-family: Poppins;
        font-size: 1.6rem;
        color: var(--color-text-base) 
