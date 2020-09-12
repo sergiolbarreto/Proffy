@@ -1,3 +1,7 @@
+![GitHub](https://img.shields.io/github/license/sergiolbarreto/Proffy)
+![GitHub repo size](https://img.shields.io/github/repo-size/sergiolbarreto/Proffy)
+![GitHub language count](https://img.shields.io/github/languages/count/sergiolbarreto/Proffy)
+
 # Proffy
 ***
  A platform that connects students and teachers. Project guided by Rocketseat's new level week event, using html, css, javascript and node.js // Uma platforma que conecta estudantes e professores. Projeto guiado pelo evento da Rocketseat, a New Level Week, usando, principalmente html, css, javascript e node.js
