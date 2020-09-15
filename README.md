@@ -4,7 +4,7 @@
 
 # Proffy
 ***
- A platform that connects students and teachers. Project guided by Rocketseat's new level week event, using html, css, javascript and node.js // Uma platforma que conecta estudantes e professores. Projeto guiado pelo evento da Rocketseat, a New Level Week, usando, principalmente html, css, javascript e node.js
+ A platform that connects students and teachers. Project guided by Rocketseat's new level week event, using html, css, javascript and node.js // Uma plataforma que conecta estudantes e professores. Projeto guiado pelo evento da Rocketseat, a New Level Week, usando, principalmente html, css, javascript e node.js
  
  ![Home](https://user-images.githubusercontent.com/70080558/91068615-ef797f80-e60a-11ea-99ad-7538a61cdff8.png)
  
