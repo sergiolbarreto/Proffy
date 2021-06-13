@@ -19,4 +19,4 @@
 ![Formulário](https://user-images.githubusercontent.com/70080558/91071647-d4a90a00-e60e-11ea-9763-48cba0b8f02c.png)
 
 ## 📥 Executar esse projeto no seu computador
-- clone o repositório e rode o npm de nome dev (`npm run dev`) para rodar o servidor, rodando dessa forma o site.
+- clone o repositório e rode o npm de nome dev (`npm run dev`)
