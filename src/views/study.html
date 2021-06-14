@@ -1,9 +1,9 @@
 
 <!DOCTYPE html>
-<html lang="pt_br"> <!-- lang é um atributo que vai definir a linguagem do meu html -->
+<html lang="pt_br"> 
 <head>
-    <meta charset="UTF-8"> <!-- definir propriedades da pagina como o charset, dizendo que o tipo de texto é o utf-8-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- configruar o documento para as telas-->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Proffy | Sua plataforma de estudos online</title>
 
 
@@ -26,14 +26,14 @@
             <img src="/images/images/logo.svg" alt="Proffy">
         </div>
         <div class="header-content">
-            <strong>Esses são os proffys disponíveis</strong> <!-- colocar de um jeito forte, tipo bold-->
-            <form id="search-teachers"> <!-- isso leva pro backend, no caso o que acontece quando a pessoa escolhe a opção-->
+            <strong>Esses são os proffys disponíveis</strong> 
+            <form id="search-teachers"> 
                 <div class="select-block">
-                    <label for="subject">Matéria</label> <!-- coloca do lado do subject no caso o select a palavra Matéria ou qualquer coisa que estiver entre o label-->
-                    <select name="subject" id="subject"> <!-- cria aquela barra de escolha-->
+                    <label for="subject">Matéria</label> 
+                    <select name="subject" id="subject"> 
 
                         {%for subject in subjects %}
-                        <option value="{{loop.index}}"{{"selected" if filters.subject == loop.index }}> <!-- loop index é algo do html que representa o numero (1,2,3)-->
+                        <option value="{{loop.index}}"{{"selected" if filters.subject == loop.index }}>
                             {{subject}}
                         </option>
 
@@ -42,11 +42,10 @@
                     </select>
                 </div>
                 <div class="select-block"> 
-                    <label for="weekday"> Dia da semana</label> <!-- coloca do lado do subject no caso o select a palavra Matéria ou qualquer coisa que estiver entre o label-->
-                    <select name="weekday" id="weekday"> <!-- cria aquela barra de escolha-->
-                       <!-- <option value=""> Selecione uma opção</option> voce pode colocar isso para aparecer ou nao, se nao quiser, depois de value add: disabled="" hidden=""-->
+                    <label for="weekday"> Dia da semana</label> 
+                    <select name="weekday" id="weekday"> 
                        {%for weekday in weekdays %}
-                       <option value="{{loop.index0}}"{{"selected" if filters.weekday == loop.index0 }}> <!-- loop index é algo do html que representa o numero (1,2,3)-->
+                       <option value="{{loop.index0}}"{{"selected" if filters.weekday == loop.index0 }}> 
                            {{weekday}}
                        </option>
 
@@ -55,9 +54,9 @@
                 </div>
                 <div class="input-block">
                     <label for="time"> Hora</label>
-                    <input name="time" id="time" type="time" value="{{filters.time}}"> <!--o type varia, pode ser text, number, etc-->
+                    <input name="time" id="time" type="time" value="{{filters.time}}"> 
                 </div>
-                <button type= "submit">Filtrar</button> <!-- o submit faz com que quanfo clicado, ele envie tudo que está no form, e ai entra o backend-->
+                <button type= "submit">Filtrar</button> 
             </form>
         </div>
        </header>
@@ -67,7 +66,7 @@
             <p class="no-results">Nenhum professor encontrado com a sua pesquisa.</p>
         {% else %}
 
-            {%for proffy in proffys%} <!-- para cada proffy in proffys imprima o artigo-->
+            {%for proffy in proffys%} 
                 <article class="teacher-item">
                 <header>
                     <img 

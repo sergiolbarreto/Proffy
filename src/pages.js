@@ -9,7 +9,7 @@ function pageLanding(req, res) { //funçao para ir para o get, onde qnd vc digit
 async function pageStudy(req, res) {
     const filters = req.query
 
-    if(!filters.subject || !filters.weekday || !filters.time) { //esse if faz que e nao tiver nada nesses campos de pesquisa, ele retorna so o site
+    if(!filters.subject || !filters.weekday || !filters.time) { 
         return res.render("study.html", { filters, subjects, weekdays })
     }
 
