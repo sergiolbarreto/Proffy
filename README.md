@@ -17,6 +17,3 @@
 ![preview-web](https://user-images.githubusercontent.com/70080558/91071403-809e2580-e60e-11ea-9447-4593c90b5c1b.png)
 
 ![Formulário](https://user-images.githubusercontent.com/70080558/91071647-d4a90a00-e60e-11ea-9763-48cba0b8f02c.png)
-
-## 📥 Executar esse projeto no seu computador
-- clone o repositório e rode o npm de nome dev (`npm run dev`)
